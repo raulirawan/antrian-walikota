@@ -36,4 +36,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function kantor()
+    {
+        return $this->belongsTo(Kantor::class,'kantor_id','id');
+    }
 }

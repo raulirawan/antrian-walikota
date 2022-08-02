@@ -1,51 +1,77 @@
  <!-- Sidebar -->
  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-    <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
-    </a>
+     <!-- Sidebar - Brand -->
+     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+         <div class="sidebar-brand-icon rotate-n-15">
+             <i class="fas fa-laugh-wink"></i>
+         </div>
+         <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+     </a>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider my-0">
+     <!-- Divider -->
+     <hr class="sidebar-divider my-0">
 
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
-    </li>
+     <!-- Nav Item - Dashboard -->
+     {{-- sidebar admin --}}
+     @if (Auth::user()->roles == 'ADMIN')
+         <li class="nav-item active">
+             <a class="nav-link" href="{{ route('admin.dashboard.index') }}">
+                 <i class="fas fa-fw fa-tachometer-alt"></i>
+                 <span>Dashboard</span></a>
+         </li>
+         <li class="nav-item">
+             <a class="nav-link" href="{{ route('admin.pemohon.index') }}">
+                 <i class="fas fa-fw fa-tachometer-alt"></i>
+                 <span>Data Pemohon</span></a>
+         </li>
+         <li class="nav-item">
+             <a class="nav-link" href="{{ route('admin.layanan.index') }}">
+                 <i class="fas fa-fw fa-tachometer-alt"></i>
+                 <span>Data Layanan</span></a>
+         </li>
+         <li class="nav-item">
+             <a class="nav-link" href="{{ route('admin.kantor.index') }}">
+                 <i class="fas fa-fw fa-tachometer-alt"></i>
+                 <span>Data Kantor</span></a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.petugas.index') }}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Data Petugas</span></a>
+        </li>
+         <li class="nav-item">
+             <a class="nav-link" href="#">
+                 <i class="fas fa-fw fa-tachometer-alt"></i>
+                 <span>Data Antrian</span></a>
+         </li>
+     @elseif (Auth::user()->roles == 'PETUGAS')
+         <li class="nav-item active">
+             <a class="nav-link" href="{{ route('petugas.dashboard.index') }}">
+                 <i class="fas fa-fw fa-tachometer-alt"></i>
+                 <span>Dashboard</span></a>
+         </li>
+     @else
+         <li class="nav-item active">
+             <a class="nav-link" href="{{ route('dashboard.index') }}">
+                 <i class="fas fa-fw fa-tachometer-alt"></i>
+                 <span>Dashboard</span></a>
+         </li>
+     @endif
+
      <li class="nav-item">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Data Pemohon</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Data Layanan</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Data Kantor</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Data Antrian</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Logout</span></a>
-    </li>
+         <a class="nav-link" href="{{ route('logout') }}"
+             onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();">
+             <i class="fas fa-fw fa-tachometer-alt"></i>
+             <span>Logout</span></a>
+     </li>
+     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+         @csrf
+     </form>
 
-    <!-- Nav Item - Pages Collapse Menu -->
-    {{-- <li class="nav-item">
+     <!-- Nav Item - Pages Collapse Menu -->
+     {{-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
             aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
@@ -66,5 +92,5 @@
     </li> --}}
 
 
-</ul>
-<!-- End of Sidebar -->
+ </ul>
+ <!-- End of Sidebar -->
