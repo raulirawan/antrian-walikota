@@ -55,8 +55,18 @@
          <li class="nav-item active">
              <a class="nav-link" href="{{ route('dashboard.index') }}">
                  <i class="fas fa-fw fa-tachometer-alt"></i>
-                 <span>Dashboard</span></a>
+                 <span>Beranda</span></a>
          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="{{ route('antrian.index') }}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Antrian Pelayanan</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Jadwal Antrian</span></a>
+        </li>
      @endif
 
      <li class="nav-item">

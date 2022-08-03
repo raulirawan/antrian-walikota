@@ -73,8 +73,11 @@ Route::prefix('petugas')
 Route::middleware(['auth'])
     ->group(function () {
         Route::get('dashboard', 'DashboardController@index')->name('dashboard.index');
+        Route::get('antrian-pelayanan-industrial', 'AntrianController@index')->name('antrian.index');
     });
 
 Auth::routes();
+
+Route::post('auth/register', 'Auth\RegisterController@register')->name('custom.register');
 
 Route::get('/home', 'HomeController@index')->name('home');
