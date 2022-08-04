@@ -102,7 +102,7 @@
     <!-- Page level custom scripts -->
     <script src="{{ asset('assets') }}/js/demo/chart-area-demo.js"></script>
     <script src="{{ asset('assets') }}/js/demo/chart-pie-demo.js"></script>
-	<script src="{{ asset('assets') }}/form/js/jquery-3.3.1.min.js"></script>
+	{{-- <script src="{{ asset('assets') }}/form/js/jquery-3.3.1.min.js"></script> --}}
     <script src="{{ asset('assets') }}/form/js/jquery.steps.js"></script>
 	<script src="{{ asset('assets') }}/form/js/jquery-ui.min.js"></script>
 	<script src="{{ asset('assets') }}/form/js/main.js"></script>

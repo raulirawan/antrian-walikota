@@ -13,7 +13,7 @@ $(function(){
             finish : 'Submit',
             current : ''
         },
-        onStepChanging: function (event, currentIndex, newIndex) { 
+        onStepChanging: function (event, currentIndex, newIndex) {
             var fullname = $('#first_name').val() + ' ' + $('#last_name').val();
             var phone = $('#phone').val();
             var email = $('#email').val();

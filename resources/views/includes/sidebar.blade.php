@@ -63,7 +63,7 @@
                 <span>Antrian Pelayanan</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ route('antrian.data') }}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Jadwal Antrian</span></a>
         </li>

@@ -74,6 +74,11 @@ Route::middleware(['auth'])
     ->group(function () {
         Route::get('dashboard', 'DashboardController@index')->name('dashboard.index');
         Route::get('antrian-pelayanan-industrial', 'AntrianController@index')->name('antrian.index');
+        Route::post('antrian-pelayanan-industrial', 'AntrianController@store')->name('antrian.store');
+        Route::get('get/kantor/{id}', 'KantorController@getKantor')->name('get.kantor');
+        Route::get('data-antrian', 'AntrianController@dataAntrian')->name('antrian.data');
+        Route::get('data-antrian/detail/{id}', 'AntrianController@detailAntrian')->name('antrian.detail');
+
     });
 
 Auth::routes();

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Antrian extends Model
@@ -21,4 +22,8 @@ class Antrian extends Model
     {
         return $this->belongsTo(Kantor::class,'kantor_id','id');
     }
+
+    protected $casts = [
+        'tanggal_kedatangan' => 'datetime',
+     ];
 }
