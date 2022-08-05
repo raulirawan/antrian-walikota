@@ -68,8 +68,24 @@
                                 </div>
 
                             </div>
-                            <div class="col-md-6 align-self-center text-center">
+                            <div class="col-md-6 align-self-center text-center mt-2">
+                                <div class="qrcode">
                                 {!! QrCode::size(200)->generate($antrian->kode_booking); !!}
+
+                                </div>
+                                @if ($antrian->status == 'SELESAI')
+                                <span class="badge badge-success mt-3" style="width: 200px">
+                                    SELESAI
+                                </span>
+                                @elseif($antrian->status == 'PENDING')
+                                <span class="badge badge-warning mt-3" style="width: 200px">
+                                    PENDING
+                                </span>
+                                @else
+                                <span class="badge badge-danger mt-3" style="width: 200px">
+                                    BATAL
+                                </span>
+                                @endif
                             </div>
                         </div>
                     </div>

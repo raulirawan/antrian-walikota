@@ -60,6 +60,10 @@ Route::prefix('admin')
         Route::post('petugas/create', 'Admin\PetugasController@store')->name('admin.petugas.store');
         Route::post('petugas/update/{id}', 'Admin\PetugasController@update')->name('admin.petugas.update');
         Route::get('petugas/delete/{id}', 'Admin\PetugasController@delete')->name('admin.petugas.delete');
+
+
+        Route::get('data-antrian','Admin\AntrianController@index')->name('admin.antrian.index');
+        Route::get('data-antrian/detail/{id}','Admin\AntrianController@detail')->name('admin.antrian.detail');
     });
 
 Route::prefix('petugas')

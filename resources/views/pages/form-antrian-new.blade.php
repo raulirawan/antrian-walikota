@@ -122,13 +122,15 @@
 
                     </div>
                     <!-- step 1 -->
+                    @php
+                    $kantorPertama = App\Kantor::first();
+                    @endphp
+
                     <fieldset class="mt-3">
                         <div id="maps">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15867.555166807104!2d106.82963755!3d-6.14563615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5e564ff6a3f%3A0x864bce87c5ba4501!2sRumah%20Sakit%20Husada!5e0!3m2!1sen!2sid!4v1659607544397!5m2!1sen!2sid"
-                                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            {!! $kantorPertama->link_maps !!}
                         </div>
+
                         <div class="card mx-auto mt-4 mb-5" style="width: 550px">
                             <div class="card-body">
                                 <div class="row justify-content-center">
@@ -136,16 +138,15 @@
                                         <img src="{{ asset('assets/images/logo-dki.png') }}" style="width: 50px">
                                     </div>
                                     <div class="col-md-9">
-                                        <div class="nama-kantor">Kantor Administrasi Walikota Jakarta Barat</div>
+                                        <div class="nama-kantor">{{ $kantorPertama->nama_kantor }}</div>
                                         <div class="alamat">
-                                            Jl. Kembangan Raya No.2 RT.5/RW.2, Kembangan Sel, Kec, Kembabngan, Kota
-                                            Jakarta Barat, Daerah Khusus Ibukota Jakarta 11610
+                                            {{ $kantorPertama->alamat }}
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <select name="kantor_id" id="kantor" class="form-control mt-4">
-                                            <option value="">Pilih Kantor</option>
-                                            @foreach (App\Kantor::all() as $kantor)
+                                            <option value="{{ $kantorPertama->id }}">{{ $kantorPertama->nama_kantor }}</option>
+                                            @foreach (App\Kantor::skip(1)->take(20)->get() as $kantor)
                                                 <option value="{{ $kantor->id }}">{{ $kantor->nama_kantor }}</option>
                                             @endforeach
                                         </select>

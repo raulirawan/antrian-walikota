@@ -2,11 +2,11 @@
  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
      <!-- Sidebar - Brand -->
-     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-         <div class="sidebar-brand-icon rotate-n-15">
-             <i class="fas fa-laugh-wink"></i>
+     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin.dashboard.index') }}">
+
+         <div class="sidebar-brand-text">
+            <img src="{{ asset('assets/images/logo-dki.png') }}" style="width: 30px">
          </div>
-         <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
      </a>
 
      <!-- Divider -->
@@ -22,27 +22,27 @@
          </li>
          <li class="nav-item">
              <a class="nav-link" href="{{ route('admin.pemohon.index') }}">
-                 <i class="fas fa-fw fa-tachometer-alt"></i>
+                 <i class="fas fa-fw fa-users"></i>
                  <span>Data Pemohon</span></a>
          </li>
          <li class="nav-item">
              <a class="nav-link" href="{{ route('admin.layanan.index') }}">
-                 <i class="fas fa-fw fa-tachometer-alt"></i>
+                 <i class="fas fa-fw fa-cog"></i>
                  <span>Data Layanan</span></a>
          </li>
          <li class="nav-item">
              <a class="nav-link" href="{{ route('admin.kantor.index') }}">
-                 <i class="fas fa-fw fa-tachometer-alt"></i>
+                 <i class="fas fa-fw fa-briefcase"></i>
                  <span>Data Kantor</span></a>
          </li>
          <li class="nav-item">
             <a class="nav-link" href="{{ route('admin.petugas.index') }}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-fw fa-user"></i>
                 <span>Data Petugas</span></a>
         </li>
          <li class="nav-item">
-             <a class="nav-link" href="#">
-                 <i class="fas fa-fw fa-tachometer-alt"></i>
+             <a class="nav-link" href="{{ route('admin.antrian.index') }}">
+                 <i class="fas fa-fw fa-list"></i>
                  <span>Data Antrian</span></a>
          </li>
      @elseif (Auth::user()->roles == 'PETUGAS')
@@ -59,12 +59,12 @@
          </li>
          <li class="nav-item">
             <a class="nav-link" href="{{ route('antrian.index') }}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-fw fa-list"></i>
                 <span>Antrian Pelayanan</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('antrian.data') }}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-fw fa-calendar"></i>
                 <span>Jadwal Antrian</span></a>
         </li>
      @endif
@@ -73,7 +73,7 @@
          <a class="nav-link" href="{{ route('logout') }}"
              onclick="event.preventDefault();
                       document.getElementById('logout-form').submit();">
-             <i class="fas fa-fw fa-tachometer-alt"></i>
+             <i class="fa fa-fw fa-arrow-left"></i>
              <span>Logout</span></a>
      </li>
      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
