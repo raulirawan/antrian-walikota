@@ -112,6 +112,14 @@
             font-size: .8rem;
             border-radius: 10px;
         }
+
+        .bg-register-image {
+            background: url('https://i.ibb.co/yXHVvbX/logo-dki.png');
+            background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 350px;
+        }
     </style>
 </head>
 
@@ -129,7 +137,8 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4 text-left">Pendaftaran!</h1>
                             </div>
-                            <form class="user" action="{{ route('custom.register') }}" method="POST" enctype="multipart/form-data">
+                            <form class="user" action="{{ route('custom.register') }}" method="POST"
+                                enctype="multipart/form-data">
                                 @csrf
                                 {{-- <div class="col-md-12"> --}}
                                 <div class="form-group row">
@@ -143,7 +152,8 @@
                                     </div>
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <label>Nomor Handphone</label>
-                                        <input type="number" name="nomor_handphone" value="{{ old('nomor_handphone') }}" class="form-control"
+                                        <input type="number" name="nomor_handphone"
+                                            value="{{ old('nomor_handphone') }}" class="form-control"
                                             placeholder="Nomor Handphone" required>
                                     </div>
 
@@ -151,8 +161,8 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <label>Nama Lengkap</label>
-                                        <input type="text" name="nama" value="{{ old('nama') }}" class="form-control"
-                                            placeholder="Nama Lengkap" required>
+                                        <input type="text" name="nama" value="{{ old('nama') }}"
+                                            class="form-control" placeholder="Nama Lengkap" required>
                                     </div>
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <label>Jenis Kelamin</label>
@@ -168,8 +178,8 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <label>Username</label>
-                                        <input type="text" name="username" value="{{ old('username') }}" class="form-control"
-                                            placeholder="Username" required>
+                                        <input type="text" name="username" value="{{ old('username') }}"
+                                            class="form-control" placeholder="Username" required>
                                         @if ($errors->has('username'))
                                             <span class="text-danger size-font">{{ $errors->first('username') }}</span>
                                         @endif
@@ -190,8 +200,8 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <label>Email</label>
-                                        <input type="email" name="email" value="{{ old('email') }}" class="form-control"
-                                            placeholder="Email" required>
+                                        <input type="email" name="email" value="{{ old('email') }}"
+                                            class="form-control" placeholder="Email" required>
                                         @if ($errors->has('email'))
                                             <span class="text-danger size-font">{{ $errors->first('email') }}</span>
                                         @endif
@@ -211,7 +221,7 @@
                                         <input type="password" name="password" class="form-control"
                                             placeholder="Password" required>
                                         @if ($errors->has('password'))
-                                        <span class="text-danger size-font">{{ $errors->first('password') }}</span>
+                                            <span class="text-danger size-font">{{ $errors->first('password') }}</span>
                                         @endif
                                     </div>
 
@@ -244,7 +254,9 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <label>Tanggal Lahir</label>
-                                        <input type="date" name="tanggal_lahir" value="{{ old('tanggal_lahir', date('Y-m-d')) }}" class="form-control" required>
+                                        <input type="date" name="tanggal_lahir"
+                                            value="{{ old('tanggal_lahir', date('Y-m-d')) }}" class="form-control"
+                                            required>
                                     </div>
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <label>Alamat</label>

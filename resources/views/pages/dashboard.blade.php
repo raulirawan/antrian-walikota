@@ -16,7 +16,7 @@
             <p>
                 Hallo {{ Auth::user()->name }} Selamat Datang di Sistem Antrian Pelayanan Industrial, Kantor
                 Suku Dinas Transmigrasi dan Energi Kota Administrasi Jakarta Barat.
-                Untuk Melihat Informas dan Panduan Bisa Memilih Menu Yang Ada Di bawah Ini.
+                Untuk Melihat Informasi dan Panduan Bisa Memilih Menu Yang Ada Di bawah Ini.
             </p>
 
             <div id="accordion">
@@ -31,7 +31,7 @@
 
                   <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        Informasi berguna untuk membantu masyarakat/pelanggan mengatur antrian agar lebih menjadi efektif dan efisien sehingga memungkinkan setiap pelanggan yang datang ke tempat,mendapatkan layanan yang mereka butuhkan dengan mudah dan cepat.
                     </div>
                   </div>
                 </div>
@@ -45,9 +45,7 @@
                   </div>
                   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                     <div class="card-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                    </div>
-                  </div>
+                        Layanan ini dibuat agar mempermudah masyarakat/pelanggan untuk mengantri di Wali Kota Jakarta Barat,sehingga tidak ada lagi penumpukan pada antrian
                 </div>
 
               </div>
